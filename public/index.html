@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/output.css">
+</head>
+<!--  style="background-image: url('/assets/bg-todo.jpg');" -->
+<body class="flex flex-col min-h-screen bg-cover bg-center bg-cyan-950">
+
+    <!-- NAVIGATION -->
+    <div class="flex flex-col h-full form-background">
+        <div class="flex w-full justify-between items-center py-4 px-8">
+            <div class="w-1/2">
+                <h1 class="text-2xl text-white font-bold">To Do List</h1>
+            </div>
+            <div class="w-1/2">
+                <div id="profile" class="w-50 mx-2 text-right">
+                    <h4 id="userName" class=" text-lg font-bold text-white"></h4>
+                    <h6 id="userJobTitle" class="text-md text-white"></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Form Start -->
+    <div id="loginForm" class="flex flex-col justify-center items-center min-h-screen">
+        <div class="w-full p-8 flex flex-col items-center rounded-lg mx-auto max-w-md form-background">
+            <div class="w-full">
+                <h2 class="text-4xl font-bold text-white mb-4 text-center">Set Profile</h2>
+                <div class="w-full mb-3 max-w-sm">
+                    <label for="name" class="block mb-2 font-semibold text-primary">Name :</label>
+                    <input type="text" id="name" class="w-full border-2 px-2 rounded-md h-10" placeholder="Enter your name">
+                </div>
+                <div class="w-full mb-3 max-w-sm">
+                    <label for="jobTitle" class="block mb-2 font-semibold text-primary">Job Title :</label>
+                    <input type="text" id="jobTitle" class="w-full border-2 px-2 rounded-md h-10" placeholder="Enter your job title">
+                </div>
+                <div class="flex justify-center">
+                    <button id="btnSubmitProfile" class="text-white font-bold rounded py-2 px-4 mt-2 bg-sky-500 hover:bg-sky-700">
+                        Submit
+                    </button>
+                </div>
+            </div>
+         </div>
+    </div>
+    <!-- Login Form End -->
+
+    <!-- To Do List Start -->
+    <div id="home" class="hidden flex flex-col">
+        <div class="flex flex-col min-h-screen px-8">
+            <div class="w-full flex flex-col p-8">
+                <div>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/2 mb-3 me-3">
+                            <label for="date" class="block mb-2 text-primary font-semibold">Date :</label>
+                            <input type="date" id="toDoDate" class="w-full rounded-md h-10 px-3">
+                        </div>
+                        <div class="w-full md:w-1/2 mb-3">
+                            <label for="priority" class="block mb-2 text-primary font-semibold">Priority :</label>
+                            <select name="priority" id="toDoPriority" class="w-full border-2 rounded-md px-3 h-10 text-black">
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="block mb-2 text-primary font-semibold">Description :</label>
+                    <textarea name="description" id="toDoDescription" placeholder="Enter Description" class="w-full border-2 rounded-md px-3"></textarea>
+                </div>
+                <div class="flex justify-center">
+                    <button id="btnAddTask" class="text-md text-white px-4 py-1 rounded bg-sky-500 hover:bg-sky-700 h-">
+                        Submit
+                    </button>
+                </div>
+            </div>
+    
+            <div class="w-full flex-grow overflow-y-auto px-8 py-4 bg-gray-800/20">
+                <div class="flex justify-center mb-4">
+                    <h1 class="text-xl text-white font-bold">To Do List</h1>
+                </div>
+                <div class="flex justify-center items-center mb-3">
+                    <div id="toDoAll" class="w-full flex justify-center border-b-2 border-transparent">
+                        <button class="px-3 py-1 text-white rounded-md focus:outline-none focus:ring focus:ring-violet-300">
+                            All Task :
+                        </button>
+                    </div>
+                </div>
+                <div id="toDoList" class="overflow-y-auto mb-4" style="max-height: 32vh;">
+                    <!-- isi todo list -->
+                </div>
+                <div>
+                    <div class="w-full flex justify-center border-b-2 border-transparent">
+                        <button class="px-3 py-1 text-white rounded-md focus:outline-none focus:ring focus:ring-violet-300">
+                            Completed :
+                        </button>
+                    </div>
+                </div>
+                <div id="toDoCompleted" class="overflow-y-auto">
+
+                </div>
+                <div class="flex items-center justify-center mt-4">
+                    <button id="btnDeleteAll" class="hidden bg-red-500 hover:bg-red-700 text-md text-white py-1 px-4 rounded">
+                        Delete All
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+    </div>
+    <div class="flex w-full justify-center py-4">
+        <button id="logOut" class="hidden bg-red-500 hover:bg-red-700 text-md text-white py-1 px-4 rounded">Log Out</button>
+    </div>
+     <!-- To Do List End -->
+     <footer class="w-full flex px-8 py-4">
+        <div class="w-full flex justify-center">
+            <p class="font-medium text-sm text-white">Made with❤️oleh Wilman</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
